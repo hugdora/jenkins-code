@@ -21,17 +21,11 @@ pipeline {
     sh 'mvn test'
          }
   }
-   stage('Deploy'){
+   stage('Building image'){
     steps{
         script {
           docker.build registry + ":tagname"
          }
-  }
-   stage('docker'){
-   steps {
-    echo "docker step"
-    sleep 10
-   }
   }
  }
 }
