@@ -1,6 +1,6 @@
 pipeline { environment {
     registry = "hugdora/devops-pipe"
-    registryCredential = ‘c7094805-3454-402a-8986-46fb33e0b264’
+    registryCredential =‘c7094805-3454-402a-8986-46fb33e0b264’
             }
  agent any
  tools {
