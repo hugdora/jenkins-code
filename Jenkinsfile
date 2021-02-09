@@ -3,6 +3,10 @@ pipeline {
  tools {
   maven 'M2_HOME'
  }
+ environment {
+    registry = "hugdora/devops-pipe"
+    registryCredential = ‘c7094805-3454-402a-8986-46fb33e0b264’
+}
  stages {
   stage('Build'){
    steps {
@@ -18,10 +22,10 @@ pipeline {
    }
   }
    stage('Deploy'){
-   steps {
-    echo "deploy step"
-    sleep 10
-   }
+    steps{
+        script {
+          docker.build registry + ":tagname"
+  }
   }
    stage('docker'){
    steps {
